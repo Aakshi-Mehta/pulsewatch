@@ -1,0 +1,27 @@
+{
+  "name": "pulsewatch",
+  "version": "1.0.0",
+  "description": "PulseWatch — Know what changed. Know what matters.",
+  "main": "server/src/app.js",
+  "scripts": {
+    "setup": "npm install --prefix server && npm install --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "seed": "npm run seed --prefix server",
+    "test": "npm test --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "node server/src/app.js"
+  },
+  "keywords": [
+    "fintech",
+    "watchlist",
+    "market-data",
+    "pulsewatch"
+  ],
+  "author": "PulseWatch Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

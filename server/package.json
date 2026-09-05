@@ -1,0 +1,25 @@
+{
+  "name": "pulsewatch-server",
+  "version": "1.0.0",
+  "description": "PulseWatch Backend REST API & Meaningful Change Engine",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "seed": "node src/seed.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "supertest": "^6.3.4",
+    "vitest": "^1.5.0"
+  }
+}
