@@ -11,29 +11,34 @@ export const ReturnBriefHeader = () => {
 
   const { awayDuration, summary, totalStocks } = changesBrief;
   const totalAttentionCount = summary.significant + summary.watch;
-  const firstName = user?.name ? user.name.split(' ')[0] : 'Trader';
+  const userName = user?.name || 'Trader';
+  const currentDateStr = new Date().toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 
   return (
     <div className="relative overflow-hidden rounded-2xl glass-card p-6 md:p-8 mb-8 border border-slate-200 shadow-sm bg-white">
-      {/* Background Accent Gradients */}
+      {/* Subtle Background Accent Gradients */}
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         
-        {/* Left Column: Greeting & Away Duration */}
+        {/* Left Column: Professional Greeting & Away Duration */}
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-600 px-2.5 py-1 rounded-full bg-brand-50 border border-brand-200 flex items-center gap-1.5 shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5" /> Return Brief
+              <Sparkles className="w-3.5 h-3.5" /> Market Briefing
             </span>
+            <span className="text-xs text-slate-500 font-mono font-medium">
+              {currentDateStr}
+            </span>
+            <span className="text-slate-300">•</span>
             <span className="text-xs text-slate-500 flex items-center gap-1 font-mono font-medium">
               <Clock className="w-3.5 h-3.5 text-slate-400" /> Away for {awayDuration || '2h 0m'}
             </span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 mb-2">
-            Good morning, {firstName} 👋
+            Welcome back, {userName}
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed font-medium">
